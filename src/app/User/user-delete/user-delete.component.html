@@ -1,0 +1,29 @@
+<app-user-sidebar></app-user-sidebar>
+
+<div class="depth" style="padding-top: 70px;height: 100vh;">
+    <img src="../../../assets/img/Gallery/background1.jpg" class="bg-img" alt="placeholder">
+    <div class="overlay"></div>
+  
+    <div class="d-flex justify-content-center" style="padding-bottom: 30px;padding-right: 30px;padding-top: 30px;">
+  
+        <div class="col-lg-4 rounded" style=" color:#223; background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);">
+  
+            <div class="text-center">
+                <h4 class="mb-sm-0 pt-3" style="padding-top: 15px;color: #223;"> <strong>Permanently Delete Account</strong>  </h4>
+                <hr style="background-color: #eee;">
+            </div>
+            <div class="col-md-9 col-lg-9 hidden-xs hidden-sm">
+                <input type="hidden" name="uid" #id="ngModel" [(ngModel)]="users.userData.id" *ngFor="let user of getUserList" class="collection">
+  
+                <mat-form-field class="col-lg-6 ">
+                    <input type="password" matInput placeholder="Password" name="password" #password="ngModel" [(ngModel)]="users.userData.password" required > 
+                </mat-form-field>
+              
+                <input type="submit" value="Delete" class="btn red" (click)="onDelete(password.value)"  style="padding: 10px;">
+
+            </div> 
+        </div>
+    </div>
+</div>   
+
+  

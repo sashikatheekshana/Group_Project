@@ -1,0 +1,43 @@
+.bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh ;
+}
+
+.bg-img .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .85;
+    // background: #1C1D21;
+    background : #eee ;
+    height: 100vh ;
+}
+
+.button-cus{
+    background:transparent;
+    border:none; 
+    font-size : 90% ;
+} 
+
+.btn-cus{
+    background-color: royalblue;
+    font-size: 150%;
+}
+
+.form-font{
+    font-size: 90%;
+}
+
+.mat-input-placeholder {
+    color:white !important;
+  }

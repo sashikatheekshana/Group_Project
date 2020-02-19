@@ -1,0 +1,130 @@
+<app-prof-sidebar></app-prof-sidebar>
+<div class="depth" style="padding-top:75px">
+  <div class="wrapper">
+    <div class="page-header page-header-small" filter-color="orange">
+      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/Gallery/blog1.jpg') ;">
+      </div>
+  </div>
+
+    <div class="container" style="padding-top: 50px;margin-top: -500px;">
+      <div class="card">
+        <div class="card bg-secondary shadow" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
+          <div class="card-header bg-white border-0 aqua-gradient-rgba" >
+            <div class="d-flex justify-content-center " >
+              <h2 style="padding-top: 20px;color: #FAFAFA;"><strong> Edit Profile</strong> </h2>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+        <div class="row">
+          <div class="col-lg-3">
+            <div style="padding: 15px;">
+              <div class="text-center">
+                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                <h6>Change profile picture</h6>
+      
+                <input type="file" (change)="uploadImage($event)" accept=".png,.jpg" />
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-lg-9 personal-info">
+            
+            <div style="padding: 30px;">
+              <h3>Personal info</h3>
+    
+              <form [formGroup]="profileForm">
+                  <div class="row">
+                    <mat-form-field class="col-lg-6 ">
+                      <input matInput placeholder="Display Name" type="text" formControlName="displayName" [(ngModel)]="this.Log.displayName">
+                    </mat-form-field>
+                    <mat-form-field class="col-lg-6 ">
+                      <input matInput placeholder="User Type" type="text" formControlName="userType" [(ngModel)]="this.Log.userType">
+                    </mat-form-field>
+                  </div>            
+                  
+                  <br>
+      
+                  <div class="row">
+                    <mat-form-field class="col-lg-6 ">
+                      <input matInput placeholder="Age" type="text" formControlName="age" [(ngModel)]="this.Log.age">
+                    </mat-form-field>
+                    <select aria-placeholder="Gender" class="mdb-select col-lg-6 custom-select" style="background-color: transparent;" formControlName="gender" [(ngModel)]="this.Log.gender" > 
+                      <option value="" disabled selected> Gender </option>
+                      <option value="Male"> Male </option>
+                      <option value="Female"> Female </option>
+                    </select>       
+                  </div>            
+      
+                  <br>
+      
+                  <div class="row">
+                    <mat-form-field class="col-lg-6 ">
+                      <input matInput placeholder="Email" type="text" formControlName="email"  [(ngModel)]="this.Log.email">
+                    </mat-form-field>
+                    <mat-form-field class="col-lg-6 ">
+                      <input matInput placeholder="Mobile" type="text" formControlName="contact" [(ngModel)]="this.Log.contact">
+                    </mat-form-field>
+                  </div>            
+                
+                  <div class="row">
+                    <select class="mdb-select md-form col-lg-12 custom-select" style="background-color: transparent;" formControlName="eType"    [(ngModel)]="this.Log.eType" > 
+                      <option value="" disabled selected>Event Type</option>
+                      <option value="Photographer">Photographer</option>
+                      <option value="Videographer">Videographer</option>
+                      <option value="Makeup Artist">Makeup Artist</option>
+                      <option value="Music">DJ and Bands</option>
+                      <option value="Catering">Catering</option>
+                    </select>
+      
+                    <select class="mdb-select col-lg-12 custom-select" style="background-color: transparent;" formControlName="district"  [(ngModel)]="this.Log.district" > 
+                      <option value="" disabled selected> Select District </option>
+                      <option value="Ampara"> Ampara </option>
+                      <option value="Anuradhapura"> Anuradhapura </option>
+                      <option value="Badulla">Badulla</option>
+                      <option value="Batticaloa"> Batticaloa </option>
+                      <option value="Colombo"> Colombo </option>
+                      <option value="Galle">Galle</option>
+                      <option value="Gampaha"> Gampaha</option>
+                      <option value="Hambantota"> Hambantota </option>
+                      <option value="Jaffna"> Jaffna </option>
+                      <option value="Kalutara"> Kalutara</option>
+                      <option value="Kandy">Kandy</option>
+                      <option value="Kegalle">Kegalle</option>
+                      <option value="Kilinochchi"> Kilinochchi </option>
+                      <option value="Kurunegala"> Kurunegala</option>
+                      <option value="Mannar"> Mannar</option>
+                      <option value="Matale"> Matale </option>
+                      <option value="Matara">Matara</option>
+                      <option value="Monaragala">Monaragala</option>
+                      <option value="Mulathiv"> Mulathiv </option>
+                      <option value="NuwaraEliya">Nuwara Eliya</option>
+                      <option value="Polonnaruwa"> Polonnaruwa </option>
+                      <option value="Puttalam"> Puttalam</option>
+                      <option value="Ratnapura"> Ratnapura</option>
+                      <option value="Trincomalee"> Trincomalee</option>
+                      <option value="Vavniya"> Vavniya </option>
+                  </select>    
+                </div>
+      
+                <br>
+                <mat-form-field class="col-lg-12 col-md-12  col-sm-12">
+                  <!-- <textarea rows="1" cols="60"  name="description" #description="ngModel"  [(ngModel)]="users.userData.description" > </textarea> -->
+                  <textarea matInput placeholder="Description"  formControlName="description"  rows="10" placeholder="Type Description" [(ngModel)]="this.Log.description"></textarea>  
+                </mat-form-field>   
+                
+                <div class="form-group">
+                  <label class="col-md-3 control-label"></label>
+                  <div class="col-md-8">
+                    <button type="submit" class="btn btn-primary" (click)="updateData(profileForm.value)">Save changes</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

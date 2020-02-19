@@ -1,0 +1,26 @@
+  <div class="sidebar-fixed position-fixed depth view" style="background-color: #eee;" >
+    <div class="text-center" style="padding-top: 100px;" >
+      <img src="{{this.Log.photoURL}}" class="rounded-circle" width="200px" height="200px" >
+        <br>
+          <h4 class="collection">
+            {{this.Log.firstName}} {{this.Log.lastName}}
+          </h4>
+          <p class="collection" >{{this.Log.email}}</p>        
+    </div>
+    
+    <div class="list-group list-group-flush" style="padding-top:50px;">
+      <a routerLink="../UserProfile" class="list-group-item list-group-item-action waves-effect"  style="background-color:transparent;" mdbWavesEffect>
+        <mdb-icon fas icon="user" class="mr-3" ></mdb-icon> Profile
+      </a>
+      <a routerLink="../UserEditUser" class="list-group-item list-group-item-action waves-effect" style="background-color:transparent;" mdbWavesEffect>
+        <mdb-icon fas icon="pen" class="mr-3"></mdb-icon> Edit Profile
+      </a>
+      <a routerLink="../UserBooking" class="list-group-item list-group-item-action waves-effect" style="background-color:transparent;" mdbWavesEffect>
+        <mdb-icon fas icon="table" class="mr-3"></mdb-icon> Booking History
+      </a>
+      <a routerLink="../Message" class="list-group-item list-group-item-action waves-effect" style="background-color:transparent;" mdbWavesEffect>
+        <mdb-icon fas icon="envelope" class="mr-3">delete</mdb-icon> Messages
+      </a>
+      
+    </div>
+  </div>

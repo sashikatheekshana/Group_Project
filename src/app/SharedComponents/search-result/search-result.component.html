@@ -1,0 +1,75 @@
+<!-- <p>search-result works!</p> -->
+
+<app-user-sidebar></app-user-sidebar>
+
+<body class="mdb-skin" style="background: #FAFAFA;">
+<!-- Section: Blog v.3 -->
+<div class="depth" style="padding-top:75px">
+    <div class="container">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5">Search Result</h2>
+    <!-- Section description -->
+    
+    <!-- Grid row -->
+    <div class="row">
+  
+      <!-- Grid column -->
+      <div class="col-lg-5 col-xl-4">
+  
+        <!-- Featured image -->
+        <!-- <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Sample image">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div> -->
+
+        <div class="photo-container" style="padding-top:10px;">
+            <img src="{{user?.photoURL}}" alt="" class="rounded-circle" width="250px" height="250px">
+        </div>
+  
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-lg-7 col-xl-8">
+  
+        <!-- Post title -->
+        <h3 class="font-weight-bold mb-3"><strong>{{user?.displayName}}</strong></h3>
+        <!-- Excerpt -->
+        <p class="dark-grey-text"> {{user?.des}} </p>
+        <!-- Post data -->
+        <p>{{user?.date}}</p>
+        <!--Rating-->
+        <ul class="rating">
+              <h5>Rating
+              <mdb-icon fas icon="star"></mdb-icon>
+                       
+              <mdb-icon fas icon="star"></mdb-icon>
+                        
+              <mdb-icon fas icon="star"></mdb-icon>
+           
+              <mdb-icon fas icon="star"></mdb-icon>
+           
+              <mdb-icon fas icon="star"></mdb-icon>
+              </h5>
+          </ul>
+
+        <!-- Read more button -->
+        <a mdbBtn color="primary" rounded="true" outline="true" (click)="onClick()" mdbWavesEffect>Visit Profile</a>
+  
+      </div>
+      <!-- Grid column -->
+  
+    </div>
+    <!-- Grid row -->
+
+  
+
+    </div>
+    </div>
+    </body>
+
+    
+    

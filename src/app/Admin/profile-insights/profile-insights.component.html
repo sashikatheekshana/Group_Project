@@ -1,0 +1,185 @@
+<app-sidebar></app-sidebar>
+
+<div class="depth" style="padding-top: 100px;height: 100vh;">    
+    <img src="../../../assets/img/Gallery/background1.jpg" class="bg-img" alt="placeholder">
+    <div class="overlay">
+    </div>      
+
+<!------------------------------ Send New Message --------------------------------------->
+
+    <div class="col-sm-60"  style="font-family:Roboto;padding-right:30px;">
+        <mdb-card class="mb-4 wow fadeIn" style="max-height:100px;border: solid #112;">
+            <mdb-card-body class="d-sm-flex justify-content-between"  style="background-color: #223;" >
+                <h3 class="mb-sm-0 pt-3 text-white"> User Interactions </h3> 
+                <div class="d-flex md-form justify-content-center my-0" style="max-height:50px">
+                    <button mdbBtn color="primary" size="sm"  type="submit" class="btn-sm text-danger waves-light" data-toggle="modal" data-target="#basicExample"(click)="frame.show()" mdbWavesEffect > New Message </button>
+                </div>
+            </mdb-card-body>
+        </mdb-card>
+    </div>
+
+    <div class="row" style="padding-right: 30px;">
+        
+<!------------------------------- Feedback Message -------------------------------------->
+        
+        <div class="col-lg-6">
+            <div style="padding-left: 30px;padding-bottom: 30px;font-family:Roboto;background-color: #223;padding-right: 30px" id="sent">
+                <div class="text-center">
+                    <h3 class="mb-sm-0 pt-3 text-white" style="padding-top: 15px;padding-bottom: 15px;"> User Feedbacks </h3>
+                </div>
+                <div class= "d-flex ">
+                    <table class="table table-striped ">
+                        <thead class="" style="background-color: #223;color: white;">
+                            <tr>
+                                <th> Sender </th>
+                                <th> Sender Email</th>
+                                <th> Date & Time </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="white-text" style="background-color:#223;">
+                            <tr *ngFor= "let Rmsg of getUserMessages">
+                                <td> <strong> {{Rmsg.name}} </strong> </td>
+                                <td> <strong> {{Rmsg.email}} </strong>  </td>
+                                <td> <strong> {{Rmsg.date}}</strong> </td>
+                                <td> 
+                                    <button mdbBtn color="primary" size="sm"  type="submit" class="btn-sm text-danger waves-light" data-toggle="modal" data-target="#basicExample"(click)="showFrame2(Rmsg, frame2);" mdbWavesEffect > View </button>
+                                </td>
+                                <td> <a class="btn-sm text-danger"> 
+                                    <i class="fas fa-trash-alt btn-danger rounded " (click)="RecOnDelete(Rmsg.id)" style="padding: 10px;"> </i>
+                                </a> </td>
+                            </tr>
+                        </tbody>
+                    </table>        
+                </div>
+            </div>          
+        </div>
+
+<!--------------------------------- Sent Messages -------------------------------------->
+        
+        <div class="col-lg-6">
+            <div style="padding-left: 30px;padding-bottom: 30px;font-family:Roboto;background-color: #223;padding-right: 30px" id="sent">
+                <div class="text-center">
+                    <h3 class="mb-sm-0 pt-3 text-white" style="padding-top: 15px;padding-bottom: 15px;"> Sent Messages </h3>
+                </div>
+                <div class= "d-flex ">
+                    <table class="table table-striped ">
+                        <thead class="" style="background-color: #223;color: white;">
+                            <tr>
+                                <th> Receiver Type </th>
+                                <th> Receiver</th>
+                                <th> Date & Time </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="white-text" style="background-color:#223;">
+                            <tr *ngFor= "let msg of getMessageList">
+                                <td> <strong> {{msg.receiverType}} </strong> </td>
+                                <td> <strong> {{msg.receiver}} </strong>  </td>
+                                <td> <strong> {{msg.date}}</strong> </td>
+                                <td> 
+                                    <button mdbBtn color="primary" size="sm"  type="submit" class="btn-sm text-danger waves-light" data-toggle="modal" data-target="#basicExample"(click)="showFrame(msg, frame1);" mdbWavesEffect > View </button>
+                                </td>
+                                <td> <a class="btn-sm text-danger"> 
+                                    <i class="fas fa-trash-alt btn-danger rounded " (click)="onDelete(msg.id)" style="padding: 10px;"> </i>
+                                </a> </td>
+                            </tr>
+                        </tbody>
+                    </table>        
+                </div>
+            </div>          
+        </div>
+    </div>
+</div>
+
+<!------------------------------ Modals for messages ---------------------------------->
+
+    <!-- Send New Message -->
+    <div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+        <div class="modal-dialog modal-dialog-centered  modal-notify modal-info" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center" >
+                    <p class="heading lead white-text"> <strong>Send New Message </strong> </p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                        <span aria-hidden="true" class="white-text">×</span>
+                    </button>
+                </div>  
+                <div class="modal-body">
+                    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+                        <div class="row">
+                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                <input matInput placeholder="Sender Name" name="name" #name="ngModel" [(ngModel)]="Msg.sendMessage.name" required > 
+                            </mat-form-field>
+                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                <input matInput placeholder="Sender Email"  name="email" #email="ngModel" [(ngModel)]="Msg.sendMessage.email" required > 
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <select class="mdb-select md-form col-lg-12 custom-select" style="background-color: transparent;" name="receiverType" #receiverType="ngModel" [(ngModel)]="Msg.sendMessage.receiverType" > 
+                                <option value="" disabled selected>Receiver Type</option>
+                                <option value="Global">Global</option>
+                                <option value="User">User</option>
+                                <option value="Professional">Professional</option>
+                                <option value="Private">Private</option>
+                            </select>
+                        </div>
+                        <mat-form-field class="col-lg-12 col-md-12 col-sm-12">
+                            <input matInput placeholder="Receiver Email" name="receiver" #receiver="ngModel" [(ngModel)]="Msg.sendMessage.receiver" required > 
+                        </mat-form-field>
+
+                        <mat-form-field class="col-lg-12 col-md-12 col-sm-12">
+                            <input matInput placeholder="Date" name="date" #date="ngModel" [(ngModel)]="Msg.sendMessage.date" required > 
+                        </mat-form-field>
+                        <textarea class="form-control mb-4" style="background-color: transparent;" rows="5" placeholder="Type Message" name="message" #message="ngModel" [(ngModel)]="Msg.sendMessage.message" required ></textarea>        
+
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-lg btn-primary"> Send Message </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>                
+    </div>
+
+    <!-- Sent Messages -->
+    <div mdbModal #frame1="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+        <div class="modal-dialog modal-dialog-centered  modal-notify modal-info" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center" >
+                    <p class="heading lead white-text"> <strong>  Message Body </strong> </p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame1.hide()">
+                        <span aria-hidden="true" class="white-text">×</span>    
+                    </button>
+                </div>  
+                <div class="modal-body">
+                    
+                    <h5> Message : </h5>
+                    <p> {{ms}} </p>      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedbacks Received -->
+    <div mdbModal #frame2="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+        <div class="modal-dialog modal-dialog-centered  modal-notify modal-info" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center" >
+                    <p class="heading lead white-text"> <strong>  Message Body </strong> </p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame2.hide()">
+                        <span aria-hidden="true" class="white-text">×</span>    
+                    </button>
+                </div>  
+                <div class="modal-body">
+                    
+                    <h5> Message : </h5>
+                    <p> {{Rms}} </p>      
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    

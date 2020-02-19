@@ -1,0 +1,160 @@
+<app-user-sidebar></app-user-sidebar>
+
+<div class="depth" style="padding-top: 70px;height: 100vh;">
+  <img src="../../../assets/img/Gallery/background1.jpg" class="bg-img" alt="placeholder">
+  <div class="overlay"></div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image">
+        <img src="../../../assets//img//Gallery/cover.jpg">
+    </div>
+  </div>
+
+  <div style="padding-left: 200px;">
+    <div class="container-fluid" style="margin-top: -330px;">
+      <div class="row">
+        <div class="col-lg-10 order-xl-1">
+          <div class="card bg-secondary shadow" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
+            <div class="card-header bg-white border-0 aqua-gradient-rgba" >
+              <div class="d-flex justify-content-center ">
+                <h2 style="padding-top: 20px;color: #FAFAFA;"><strong> Edit Profile</strong> </h2>
+              </div>
+            </div>
+        
+            <div class="card-body" style="background-color: #FAFAFA;">
+              <form #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+                <!-- submit over ngSubmit - reload the page when submit click, even an error occurrs -->
+                <div class="row">
+                  <div class="col-lg-3">
+                    <br><br>
+                    <input type="hidden" name="uid" #id="ngModel" [(ngModel)]="users.userData.id" *ngFor="let user of getUserList" class="collection">
+                    <input type="file" (change)="uploadImage($event)" accept=".png,.jpg">
+                  </div>
+  
+                  <div class="col-lg-9">
+                    <h4 class="heading-small text-muted mb-4">User information</h4>
+                    <div class="pl-lg-4">
+
+                      <div class="row">
+
+                        <mat-form-field class="col-lg-6 ">
+                          <input matInput disabled placeholder="User Name"  name="userName" #userName="ngModel" value="{{this.Log.displayName}}" [(ngModel)]="users.userData.displayName" required > 
+                        </mat-form-field>
+
+                        <mat-form-field class="col-lg-6 ">
+                          <input matInput disabled placeholder="User Type"  name="userType" #userType="ngModel" value="{{this.Log.userType}}" [(ngModel)]="users.userData.userType" required > 
+                        </mat-form-field>
+
+                      </div>
+    
+                      <div class="row">
+
+                        <mat-form-field class="col-lg-6">
+                          <input matInput disabled placeholder="First Name" name="firstName" #firstName="ngModel" value="{{this.Log.firstName}}" [(ngModel)]="users.userData.firstName" required >
+                        </mat-form-field>
+                
+                        <mat-form-field class="col-lg-6 ">
+                          <input matInput disabled placeholder="Last Name"  name="lastName" #lastName="ngModel" value="{{this.Log.lastName}}" [(ngModel)]="users.userData.lastName" required > 
+                        </mat-form-field> 
+
+                      </div>
+
+                      <div class="row">
+
+                        <mat-form-field class="col-lg-6">
+                          <input matInput placeholder="Age" name="age" #age="ngModel" value="{{this.Log.age}}" [(ngModel)]="users.userData.age" required >
+                        </mat-form-field>
+                
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                          <select class="mdb-select md-form col-lg-12 custom-select" style="background-color: transparent;" name="gender" #gender="ngModel" [(ngModel)]="users.userData.gender" > 
+                            <option value="" disabled selected> Gender </option>
+                            <option value="Male"> Male </option>
+                            <option value="Female"> Female </option>
+                          </select> 
+                        </div>  
+
+                      </div>
+
+                    </div>
+    
+                    <h4 class="heading-small text-muted mb-4">Contact information</h4>
+                
+                    <div class="pl-lg-4">
+
+                      <div class="row">
+                        <mat-form-field class="col-lg-6 ">
+                          <input matInput disabled placeholder="Email"  name="email" #email="ngModel" value="{{this.Log.email}}" [(ngModel)]="users.userData.email" required > 
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-6 ">
+                          <input matInput placeholder="Mobile"  name="contact" #contact="ngModel" value="{{this.Log.contact}}" [(ngModel)]="users.userData.contact">
+                        </mat-form-field>                        
+                      </div>
+    
+                      <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-6">
+                            <select class="mdb-select md-form col-lg-12 custom-select" style="background-color: transparent;" name="district" #district="ngModel" [(ngModel)]="users.userData.district" > 
+                                <option value="" disabled selected> Select District </option>
+                                <option value="Ampara"> Ampara </option>
+                                <option value="Anuradhapura"> Anuradhapura </option>
+                                <option value="Badulla">Badulla</option>
+                                <option value="Batticaloa"> Batticaloa </option>
+                                <option value="Colombo"> Colombo </option>
+                                <option value="Galle">Galle</option>
+                                <option value="Gampaha"> Gampaha</option>
+                                <option value="Hambantota"> Hambantota </option>
+                                <option value="Jaffna"> Jaffna </option>
+                                <option value="Kalutara"> Kalutara</option>
+                                <option value="Kandy">Kandy</option>
+                                <option value="Kegalle">Kegalle</option>
+                                <option value="Kilinochchi"> Kilinochchi </option>
+                                <option value="Kurunegala"> Kurunegala</option>
+                                <option value="Mannar"> Mannar</option>
+                                <option value="Matale"> Matale </option>
+                                <option value="Matara">Matara</option>
+                                <option value="Monaragala">Monaragala</option>
+                                <option value="Mulathiv"> Mulathiv </option>
+                                <option value="NuwaraEliya">Nuwara Eliya</option>
+                                <option value="Polonnaruwa"> Polonnaruwa </option>
+                                <option value="Puttalam"> Puttalam</option>
+                                <option value="Ratnapura"> Ratnapura</option>
+                                <option value="Trincomalee"> Trincomalee</option>
+                                <option value="Vavniya"> Vavniya </option>
+                            </select>
+                        </div>
+                        <mat-form-field class="col-lg-6 ">
+                          <input matInput placeholder="City"  name="city" #city="ngModel" value="{{this.Log.city}}" [(ngModel)]="users.userData.city"> 
+                        </mat-form-field>
+                        
+                      </div>
+
+                    </div>
+                    
+                    <div class="d-flex justify-content-center" style="padding: 10px; ">
+                      <div class="col-lg-6">
+                        <input type="submit" value="Update" class="btn-block btn btn-info">
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center" style="padding: 10px;">
+                      <div class="col-lg-6 t">
+                        
+                          <input  [routerLink]="['/UserDelete']" routerLinkActive="router-link-active" type="submit" value="Delete Account" class="btn-block btn red" >
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+</div>   
+
+          

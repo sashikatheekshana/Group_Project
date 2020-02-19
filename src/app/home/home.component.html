@@ -1,0 +1,468 @@
+<div class="wrapper" >
+
+    <!--------------------------------------------------------| HOME |------------------------------------------------------->
+  
+    <div class="page-header" style="height: 100vh;" id="home">
+      <div class="bg-img" >                                
+        <div class="overlay">
+            <video src="../../assets/img/loop2.mp4" class="vid"  autoplay loop muted> </video>
+        </div>
+      </div>
+        <div class="container">
+            <div class="content-center brand">
+                <img class="n-logo" src="assets/img/Gallery/logo.png" alt="">
+                <h1 class="h1-seo">Jamboree Inc.</h1>
+                <h5> D R E A M  . S E A R C H . A C Q U I R E </h5>
+            </div>
+        </div>
+    </div>
+  
+    <!------------------------------------------------------| CAROUSAL |----------------------------------------------------->
+  
+    <div class="section" id="carousel">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12 feature">
+                  <h4> Why choose <h2> Jamboree ? </h2> </h4>
+  
+                  <i class="fa fa-check"></i>
+                  <h5>The only online event service provider in Sri Lanka. </h5>
+  
+                  <i class="fa fa-check"></i>
+                  <h5>Multiple type event related services in one place. </h5>
+  
+                  <i class="fa fa-check"></i>
+                  <h5>Wide Range of event professionals in one place. </h5>
+  
+                  <i class="fa fa-check"></i>
+                  <h5>Proffessionals are ranked based on your ratings. </h5>
+  
+                  <i class="fa fa-check"></i>
+                  <h5>We welcome and act on your ratings. </h5>
+                </div>
+  
+                <div class="col-lg-6 col-md-12">
+                  <ngb-carousel>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img/Gallery/Slides/wedding2.jpg" alt="First slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img/Gallery/Slides/birthday.jpg" alt="Second slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img//Gallery/Slides/fennes_wedding.jpg" alt="Fourth slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img/Gallery/Slides/party.jfif" alt="Fifth slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img//Gallery/Slides/reception.jpg" alt="Sixth slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img/Gallery/Slides/reception2.jpg" alt="Seventh slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img//Gallery/Slides/catering.jpg" alt="Eight slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                          <img class="d-block" src="assets/img/Gallery/Slides/party2.jfif" alt="Nineth slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img//Gallery/Slides/florists.jfif" alt="Tenth slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img/Gallery/Slides/band.jpg" alt="Eleventh slide">
+                      </ng-template>
+                      <ng-template ngbSlide>
+                        <img class="d-block" src="assets/img//Gallery/Slides/makeup.jpg" alt="Tweleveth slide">
+                      </ng-template>
+                  </ngb-carousel>
+                </div>
+            </div>
+        </div>
+    </div> 
+  
+    <!----------------------------------------------------| WHAT WE OFFER |-------------------------------------------------->
+
+    <div class=" text-center" style="padding: 50px;">
+      <h1 class="title"> Start From Your Event Type </h1> <br>
+      <div class="row text-center">
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class=" text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/wedding.JPG" alt="Circle Image" class="rounded-circle" style="padding: 20px;max-width: 200px;">
+                <h3> Weddings </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPage/weddings']"  >Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/Cooperate_Events.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px;max-width: 200px;">
+                <h3> Co-operate Events </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPage/coevents']">Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/parties1.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px; width: 200px; height: 200px;">
+                <h3> Parties </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPage/parties']">Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row text-center">
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/sports.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px;max-width: 200px;">
+                <h3> Sport Events </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPage/sports']">Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/get.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px;max-width: 200px;">
+                <h3> Get-Togethers</h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPage/Get-Togethers']">Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/parties.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px;max-width: 200px;">
+                <h3> something else </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPage/others']" >Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!------------------------------------------------------| ANALYTICS |---------------------------------------------------->  
+
+    <div id="numbers" class=" row analytics">
+      <div class="image" style="background-image: url('../../assets/img/Gallery/Background/background02.jpg');" >
+          <div class="overlay"></div>
+      </div>
+      <div class="container">
+        <div class="row">      
+          <div class="col-sm-4 col-xs-6">
+              <div class="number">
+                  <i class="fa fa-users"></i>
+                  <h3> 253 </h3>
+                  <h5>Happy clients</h5>
+              </div>
+          </div>
+          <div class="col-sm-4 col-xs-6">
+              <div class="number" >
+                  <i class="fa fa-briefcase"></i>
+                  <h3>42</h3>
+                  <h5>Event Professionals </h5>
+              </div>
+          </div>      
+          <div class="col-sm-4 col-xs-6">
+              <div class="number">
+                  <i class="fa fa-book"></i>
+                  <h3>10</h3>
+                  <h5>User Bookings</h5>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------------------------------| WHAT WE OFFER PROFESSIONALS|-------------------------------------------------->
+
+    <div class=" text-center" style="padding: 50px;">
+      <h1 class="title"> Professionals Joined With Us </h1> <br>
+      <div class="row text-center">
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class=" text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/photography.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px; width: 200px; height: 200px;">
+                <h3> Photographers </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPagePro/photographers']"  >Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/videography.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px; width: 200px; height: 200px;">
+                <h3> Videographers </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPagePro/videographers']">Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/beautician.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px; width: 200px; height: 200px;">
+                <h3> Beauticians </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPagePro/beauticians']">Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row text-center">
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/dj.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px; width: 200px; height: 200px;">
+                <h3> Dj & Music Bands </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPagePro/music']">Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/caters.jpg" alt="Circle Image" class="rounded-circle"style="padding: 20px; width: 200px; height: 200px;">
+                <h3> Caters</h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPagePro/caters']">Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ml-auto col-xl-3 mr-auto">
+          <div class="card">
+            <div class="nav-tabs-navigation">
+              <div class="text-center">
+                <br>
+                <img src="../../assets/img/Gallery/Square/others.jpg" alt="Circle Image" class="rounded-circle" style="padding: 20px; width: 200px; height: 200px;">
+                <h3> Others </h3> 
+                <button class="btn-lg offer_btn" [routerLink]="['/FilterPagePro/others']" >Search now</button>
+                <br><br>       
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <!-----------------------------------------------------| CONTACT US |---------------------------------------------------->
+
+   <div id="contacts" class=" text-center contact">
+        <div class="container contact-box" >
+            <div class="row">
+                <div class="col-sm-8 con-input">
+                    <h2 class="text-center"> Get in Touch </h2> 
+                    <br>
+                    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+                      <div class="row">
+                          <div class="col-sm-6 form-group">
+                              <input class="form-control" id="name" name="name" #name="ngModel" [(ngModel)]="Rmsg.RecMessage.name" placeholder="Name" type="text" style="background:transparent;border:double;border-color: darkgrey">
+                          </div>
+                          <div class="col-sm-6 form-group">
+                              <input class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="Rmsg.RecMessage.email" placeholder="Email" type="email" style="background:transparent;border:double;border-color: darkgrey;">
+                          </div>
+                          <textarea class="form-control" id="comments" name="message" #message="ngModel" [(ngModel)]="Rmsg.RecMessage.message" placeholder="Comment" rows="5" style="background:transparent;border:double;border-color: darkgrey;" ></textarea>
+                          <div class="col-sm-6 container justify-content-center">
+                              <br>
+                              <button type="submit" class="btn btn-primary btn-lg btn-block" width="60%" style="background:royalblue;border:none;color:white">Send</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-sm-4 con-display">
+                  <br><br><br>
+                  <h4>Contact us and we'll get back to you within 24 hours.</h4><br>
+                  <h5><i class="fa fa-map-marker"></i>  Colombo, Sri Lanka</h5>
+                  <h5><i class="fa fa-phone"></i>  +94 71 0427779</h5>
+                  <h5><i class="fa fa-envelope"> </i> mail@jamboree.com</h5>
+              </div>
+          </div>
+        </div>
+    </div>
+
+   
+    <!-- <div class="section section-signup" style="background-image: url('assets/img/bg12.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
+    <div>
+      <div class="container login-page">
+        <div class="row">
+          <div class="col-md-4 content-center ml-auto mr-auto">
+              <div class="card card-login card-plain">
+                  <form class="form" method="" action="">
+                    <div class="jumbotron">  
+                    <div class="header header-primary text-center">
+                         
+                            <h2 class="font-italic">Have an issue?</h2>
+                            <h5 class="description">Contact us.</h5>
+                          
+                      </div>
+                      <div class="content">
+                        <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                          </div>
+                            <input type="text" class="form-control" placeholder="Name..." (focus)="focus=true" (blur)="focus=false" >
+                        </div>
+                      <br>
+                        <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                <i class="now-ui-icons ui-1_email-85"></i>
+                              </span>
+                          </div>
+                            <input type="email" placeholder="Email..." class="form-control" (focus)="focus1=true" (blur)="focus1=false"/>
+                        </div>
+                      </div>
+                      <div class="textarea-container">
+                          <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
+                      </div>
+                    </div>
+                      <div class="send-button">
+                          <a href="" class="btn btn-primary btn-round btn-block btn-lg " style="background:royalblue;border:none;color:white">Send Message</a>
+                      </div> 
+
+                     <div class="row justify-content-md-center sharing-area text-center">
+                      <br><br><br>
+                      <div class="text-center col-md-12 col-lg-8">
+                      <h3>Contact us and we'll get back to you within 24 hours.</h3>
+                      </div>
+                      <br>
+                      <h5><i class="fa fa-map-marker"></i>  Colombo, Sri Lanka</h5>
+                      <h5><i class="fa fa-phone"></i>  +94 71 0427779</h5>
+                      <h5><i class="fa fa-envelope"> </i> mail@jamboree.com</h5>
+                    </div>
+                  </form>
+              </div>
+          </div>
+        </div>
+          
+      </div>
+
+    </div> -->
+
+   
+    
+
+ 
+
+
+    <!-------------------------------------------------------------------------->
+    
+    
+
+    
+ <!---------------------------------------Footer------------------------------------------>
+
+    <footer class="footer mdb-color darken-4" data-background-color="mdb-color darken-4" style="padding: 2px;">
+
+      
+        <div class="row justify-content-md-center sharing-area text-center" style="padding: 2px;">
+          
+          <div class="text-center col-md-12 col-lg-8">
+            <h2 class="font-italic" style="margin: 5px;">Follow Us!</h2>
+          </div>
+            <div class="text-center col-md-12 col-lg-8">
+              <a target="_blank" href="https://www.twitter.com" class="btn btn-neutral btn-icon btn-twitter btn-round btn-lg" rel="tooltip" title="Follow us">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a target="_blank" href="https://www.facebook.com" class="btn btn-neutral btn-icon btn-facebook btn-round btn-lg" rel="tooltip" title="Like us">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+              <a target="_blank" href="https://www.linkedin.com" class="btn btn-neutral btn-icon btn-linkedin btn-lg btn-round" rel="tooltip" title="Follow us">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a target="_blank" href="https://instagram.com" class="btn btn-neutral btn-icon btn-instagram btn-round btn-lg" rel="tooltip" title="Follow us">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+
+
+
+
+
+      <div class="container">
+          <nav>
+              <ul>
+                  <li>
+                      <a href="#" class="nav-link">
+                          Jamboree
+                      </a>
+                  </li>
+                  <li>
+                      <a href="">
+                          About Us
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#contacts" class="nav-link">
+                        Contact Us
+                    </a>
+                </li>
+                 
+              </ul>
+          </nav>
+          <div class="copyright">
+              &copy;
+            {{data | date: 'yyyy'}}, Designed by Jamboree.
+              
+          </div>
+      </div>
+  </footer>
+    
+    
+  
+  </div>
+  
+ 
+
+  

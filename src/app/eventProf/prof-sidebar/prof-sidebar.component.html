@@ -1,0 +1,28 @@
+<div class="sidebar-fixed position-fixed depth view" style="background-color: #EEE;">
+  <div class="text-center " style="padding-top: 100px;">
+    <img src="{{this.Log.photoURL}}" class="rounded-circle" width="200px" height="200px">
+    <br>
+    <h4> {{this.Log.displayName}} </h4>
+    <p> {{this.Log.email}} </p>
+    
+  </div>
+
+  <div class="list-group list-group-flush" style="padding-top:50px;">
+    <a routerLink="../EventMain" class="list-group-item list-group-item-action waves-effect"
+      style="background-color:transparent;" mdbWavesEffect>
+      <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon> Main
+    </a>
+    <a routerLink="../EventEditProfile" class="list-group-item list-group-item-action waves-effect"
+      style="background-color:transparent;" mdbWavesEffect>
+      <mdb-icon fas icon="user" class="mr-3"></mdb-icon> Edit Profile
+    </a>
+    <a routerLink="../Booking" class="list-group-item list-group-item-action waves-effect"
+      style="background-color:transparent;" mdbWavesEffect>
+      <mdb-icon fas icon="table" class="mr-3"></mdb-icon> Booking Insights
+    </a>
+    <a routerLink="../Messaging" class="list-group-item list-group-item-action waves-effect"
+      style="background-color:transparent;" mdbWavesEffect>
+      <mdb-icon fas icon="comments" class="mr-3"></mdb-icon> Messaging
+    </a>
+  </div>
+</div>

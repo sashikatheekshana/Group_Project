@@ -1,0 +1,149 @@
+<app-sidebar></app-sidebar>
+
+<div class="depth">
+    <img src="../../../assets/img/Gallery/background1.jpg" class="bg-img" alt="placeholder">
+    <div class="overlay">
+    </div>
+
+    <div class="col-sm-60" style="padding-top:20px;">
+
+        <!-- Accepted Professionals Header -->
+        <mdb-card class="mb-4 wow fadeIn" style="max-height:100px;border: solid #223;">
+            <mdb-card-body class="d-sm-flex justify-content-between"  style="background-color: #223;" >
+                <div class="col-lg-1 d-flex justify-content-center">
+                    <i class="fas fa-user-tie fa-3x text-white"></i>
+                </div>
+                <div class="col-lg-11">
+                    <h3 class="mb-sm-0 pt-3 text-white"> Accepted Professional Requests </h3>
+                </div>
+            </mdb-card-body>
+        </mdb-card>
+
+        <!-- Accepted Professionals -->
+        <div class="col-md-12 col-lg-12 col-sm-12 ">
+            <div style="padding: 30px;background-color: #223;">   
+                <table class="table">
+                    <thead class="white-text">
+                        <tr>
+                            <th scope="col">User Name</th>
+                            <th scope="col">Event Type</th>
+                            <th scope="col">Professinal Type</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-white" *ngFor= "let req of approves">
+                            <td> <strong> {{req.displayName}} </strong> </td>
+                            <td> <strong> {{req.eType}}</strong>  </td>
+                            <td> <strong> {{req.eProf}} </strong> </td>
+                            <td> <strong> {{req.email}} </strong> </td>
+                            <td> <strong> {{req.contact}}</strong>  </td>
+                            <td> <strong> {{req.Description}}</strong>  </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+   </div>
+
+   <div class="col-sm-60">
+
+        <!-- Rejected Professionals Header -->
+        <div style="padding-top:30px ;">
+            <mdb-card class="mb-4 wow fadeIn" style="max-height:100px;border: solid #223;">
+                <mdb-card-body class="d-sm-flex justify-content-between"  style="background-color: #223;" >
+                    <div class="col-lg-1 d-flex justify-content-center">
+                        <i class="fas fa-user-tie fa-3x text-white"></i>
+                    </div>
+                    <div class="col-lg-11">
+                        <h3 class="mb-sm-0 pt-3 text-white"> Rejected Professional Requests </h3>
+                    </div>
+                </mdb-card-body>
+            </mdb-card>
+        </div>
+
+        <!-- Rejected Professionals -->
+        <div class="col-md-12 col-lg-12 col-sm-12 ">
+            <div style="padding: 30px;background-color: #223;">   
+                <table class="table">
+                    <thead class="white-text">
+                        <tr>
+                            <th scope="col">User Name</th>
+                            <th scope="col">Event Type</th>
+                            <th scope="col">Professinal Type</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  class="text-white" *ngFor= "let req of declines">
+                            <td> <strong> {{req.displayName}} </strong> </td>
+                            <td> <strong> {{req.eType}}</strong>  </td>
+                            <td> <strong> {{req.eProf}} </strong> </td>
+                            <td> <strong> {{req.email}} </strong> </td>
+                            <td> <strong> {{req.contact}}</strong>  </td>
+                            <td> <strong> {{req.Description}}</strong>  </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Previous Bookings -->
+    <div style="padding-top:30px ;">
+        <mdb-card class="mb-4 wow fadeIn" style="max-height:100px;border: solid #223;">
+            <mdb-card-body class="d-sm-flex justify-content-between"  style="background-color: #223;" >
+                <div class="col-lg-1 d-flex justify-content-center">
+                    <i class="fas fa-book fa-3x text-white"></i>
+                </div>
+                <div class="col-lg-11">
+                    <h3 class="mb-sm-0 pt-3 text-white"> Previous Bookings </h3>
+                </div>
+            </mdb-card-body>
+        </mdb-card>
+    </div>
+    
+    <!--Bookings with Completed,Rejected,Canceled Status -->
+    <div class="col-md-12 col-lg-12 col-sm-12 ">
+        <div style="padding: 30px;background-color: #223;">   
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 ">
+                    <div style="padding-right:30px;padding-top:30px;background-color: #223;">   
+                        <div class="d-flex "  style="padding-left: 30px;">
+                            <table class="table table-striped ">
+                                <thead class="text-white" style="background-color: #223">
+                                    <tr>
+                                    <th> Date</th>
+                                    <th> Event Name</th>
+                                    <th> Event Type</th>
+                                    <th> Professioal Name</th>
+                                    <th> Professional Mail</th>
+                                    <th> Customer Name</th>
+                                    <th> Customer Mail</th>
+                                    <th> Location</th>
+                                    </tr>
+                                    <tr *ngFor = "let booking of bookings">
+                                    <td>{{booking.Date}}</td>
+                                    <td>{{booking.eName}}</td>
+                                    <td>{{booking.eventType}}</td>
+                                    <td>{{booking.profName}}</td>
+                                    <td>{{booking.profMail}}</td>
+                                    <td>{{booking.userName}}</td>
+                                    <td> {{booking.userMail}}</td>
+                                    <td>{{booking.district}} , {{booking.city}}</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,149 @@
+
+
+//------------------------home------------------------//
+
+.bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh ;
+}
+
+.bg-img .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .92;
+    background-color: #223;
+    height: 100vh ;
+}
+
+.vid {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.n-logo {
+    max-width: 200px;
+    margin-bottom: 40px;
+}
+
+.h1-seo {
+    font-size: 2.8em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+
+//------------------------carpousal-----------------------//
+
+.feature {margin: 15px 0px;}
+
+.feature i {
+    float: left;
+    padding: 5px;
+    border-radius: 50%;
+    color:#222;
+    border: 1px solid #222;
+    margin-right: 5px;
+}
+
+.offer_btn{
+    background: transparent; 
+    border: 1px solid #6195FF;
+    color: #6195FF ;
+}
+
+.offer_btn:hover {
+    background:royalblue; 
+    border: none;
+    color: white ;
+}
+
+
+//------------------------analytics------------------------//
+
+.analytics{
+    padding-top: 60px; 
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.number {
+    text-align: center;
+    margin: 15px 0px;
+    color: white;
+}
+
+.number i {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.image .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .3;
+    background: #1C1D21;
+}
+
+
+.contact{
+    background:transparent;
+}
+
+.contact-box{
+    padding-top:40px;
+    padding-bottom: 40px ;
+    
+}
+
+.input_box{
+    background:transparent;
+    border:double;
+    border-color: darkgrey;
+}
+
+.con-input{
+    padding:50px;
+    background:#FAFAFA;
+    border: solid #223 ;
+//    border: solid #0275d8 ;
+    
+}
+
+.con-display{
+    color: white;
+//    border: solid #0275d8 ;
+    border: solid #223 ;
+    background:#223;
+}
+
+.jumbotron{
+    background-color: #EEE ;
+    color: white;
+}

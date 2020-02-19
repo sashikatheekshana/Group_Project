@@ -1,0 +1,107 @@
+<displayBar></displayBar>
+<div class="depth" style="padding-top:75px">
+    <div class="wrapper" style="height: 40vh;">
+        <div class="page-header page-header-small"  filter-color="orange">
+            <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/Gallery/blog1.jpg');height: 40vh; ;">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
+                    <img src="{{user?.photoURL}}" class="rounded-circle" alt="profile picture" style="margin-top: -300px;width: 200px;height: 200px;border: solid white;">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top: 20px;">  
+                <div class="list-group list-group-flush">
+                    <a routerLink="['/UserProfile']" class="list-group-item list-group-item-action waves-effect"  style="background-color:transparent;" mdbWavesEffect>
+                        <mdb-icon fas icon="user" class="mr-3" ></mdb-icon> User Since : 2019-10-22
+                    </a>
+                    <a routerLink="../UserEditUser" class="list-group-item list-group-item-action waves-effect" style="background-color:transparent;" mdbWavesEffect>
+                        <mdb-icon fas icon="table" class="mr-3"></mdb-icon>  Rating : Not Enough Ratings Yet
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="row" style="margin-top:-160px;">
+                    <div class="col-md-12">
+                        <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
+                            <h1 class="text-white" style="font-size: 300%;">{{user?.firstName}} {{user?.lastName}}</h1>
+                            <h5 class="text-white">Registered User</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 80px;">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>First Name</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5>{{user?.firstName}}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>Last Name</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5>{{user?.lastName}}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>Email Address</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5>{{user?.email}}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5> Gender</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5> {{user?.gender}} </h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5> Age</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5> {{user?.age}} </h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>Contact</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5>{{user?.contact}}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>District</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5>{{user?.district}}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>City</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5>{{user?.city}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

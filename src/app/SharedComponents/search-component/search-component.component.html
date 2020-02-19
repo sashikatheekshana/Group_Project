@@ -1,0 +1,52 @@
+<!-- <p>search-component works!</p>
+
+
+<li class="nav-item waves-light" mdbWavesEffect>
+  <form class="form-inline waves-light" mdbWavesEffect>
+    <ng-ais-instantsearch [config]="{
+                        apiKey: 'bdfd22d8f11adc455b2b5869da134fd9',
+                        appId: '7417ZEQGC5',
+                        indexName: users ,
+                        routing: true }"> -->
+
+      <!-- <div class="md-form my-0">
+          <ais-search-box></ais-search-box>
+      </div>
+
+      <ais-hits>
+        <ng-template let-hits="hits">
+          <div *ngFor="let hit of hits">
+            <app-post [name]="hit.data.name" [url]="hit.data.profilePic" [content]="hit.data.body" [date]="hit.data.date"  [id]="hit.objectId"  [uid]="hit.data.uid" ></app-post>
+          </div>
+        </ng-template>
+      </ais-hits> -->
+    <!-- </ng-ais-instantsearch>
+  </form>
+ </li> -->
+
+ <!-- <button (click)="onClick()">Add user</button> -->
+
+ <div>
+   
+    <!-- <li class="nav-item waves-light" mdbWavesEffect > -->
+     
+      <ais-instantsearch [config]="searchConfig">
+        
+        <ais-search-box (change)="searchChanged($event)" ></ais-search-box>
+          
+          <ais-hits *ngIf="showResults">
+              <ng-template let-hits="hits">
+                  <div *ngFor="let hit of hits">
+                     
+                      <!-- <img [src]="hit.avatar" width="30px"> -->
+                      <ais-highlight attribute="displayName" [hit]="hit"></ais-highlight>
+                      <!-- <div class="displayName">
+                          {{ hit.displayName | slice:0:30 }}...
+                      </div> -->
+                  </div>
+              </ng-template>
+          </ais-hits>
+      
+        </ais-instantsearch>
+      <!-- </li> -->
+ </div>

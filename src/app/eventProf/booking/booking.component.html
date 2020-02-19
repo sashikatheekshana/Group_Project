@@ -1,0 +1,198 @@
+<app-prof-sidebar></app-prof-sidebar>
+
+<div class="depth">
+  <img src="../../../assets/img/Gallery/background1.jpg" class="bg-img" alt="placeholder">
+  <div class="overlay">
+  </div>
+
+  <div class="col-sm-60"  style="font-family:Roboto;padding-right:30px;padding-top: 10px">
+
+  <!-------------------- Row with Overview Details ------------------------>
+
+
+      <div class="card" style="padding-right: 30px;padding-bottom: 30px;padding-left: 30px;background-color: #eee;" id="sent">
+        <div class="col-lg-12" style="font-family:Roboto;background-color: #eee;padding-right: 30px">
+          <div class="text-center">
+            <h3 class="mb-sm-0 pt-3" style="padding-top: 15px;padding-bottom: 15px;">Incoming Booking Information </h3>
+          </div>
+          <div class="d-flex "  style="padding-left: 30px;">
+            <table class="table table-striped ">
+              <thead class="" style="background-color: #eee">
+                  <tr>
+                    <th> Date</th>
+                    <th> Event Name</th>
+                    <th> Event Type</th>
+                    <th> Customer Name</th>
+                    <th> Location</th>
+                    <th> Customer Mail</th>
+                    <th> Status</th>
+                  </tr>
+                  <tr *ngFor = "let data of dataSet">
+                    <td>
+                      <div *ngIf="data.status === 'pending'">
+                        {{data.Date}}
+                      </div>
+                    </td>
+                    <td>
+                      <div *ngIf="data.status === 'pending'">
+                        {{data.eName}}
+                      </div>
+                    </td>
+                    <td>
+                      <div *ngIf="data.status === 'pending'">
+                        {{data.eventType}}
+                      </div>
+                    </td>
+                    <td>
+                      <div *ngIf="data.status === 'pending'">
+                        {{data.userName}}
+                      </div>
+                    </td>
+                    <td>
+                      <div *ngIf="data.status === 'pending'">
+                        {{data.district}} , {{data.city}}
+                      </div>
+                    </td>
+                    <td> 
+                      <div *ngIf="data.status === 'pending'">
+                        {{data.userMail}}
+                      </div>
+                    </td>
+                    <td>
+                      <div *ngIf="data.status === 'pending'" >
+                        <button (click)="changeStatus(data.bid,'accepted')" type="button" style="border-width: 5px; padding: 4px;" class="btn btn-success">Accept</button>
+                        <button (click)="changeStatus(data.bid,'rejected')" type="button" style="border-width: 5px; padding: 4px;" class="btn btn-danger">Reject</button>
+                      </div>
+                    </td>
+                  </tr>
+              </thead>
+            </table>
+            <br><br><br><br><br><br>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" style="padding:30px;background-color: #eee;" id="onGoing">
+        <div class="col-lg-12" style="font-family:Roboto;background-color: #eee;padding-right: 30px">
+      <div class="text-center">
+        <h3 class="mb-sm-0 pt-3" style="padding-top: 15px;padding-bottom: 15px;">Ongoing Booking Information </h3>
+      </div>
+      <div class="d-flex "  style="padding-left: 30px;">
+        <table class="table table-striped ">
+          <thead class="" style="background-color: #eee;">
+              <tr>
+                <th> Date</th>
+                <th> Event Name</th>
+                <th> Event Type</th>
+                <th> Customer Name</th>
+                <th> Location</th>
+                <th> Customer Mail</th>
+                <th> status</th>
+              </tr>
+              <tr *ngFor = "let data of dataSet">
+                  <td>
+                    <div *ngIf="data.status === 'accepted' || data.eventComplete == false ">
+                      {{data.Date}}
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="data.status === 'accepted' || data.eventComplete == false ">
+                      {{data.eName}}
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="data.status === 'accepted' || data.eventComplete == false ">
+                      {{data.eventType}}
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="data.status === 'accepted' || data.eventComplete == false ">
+                      {{data.userName}}
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="data.status === 'accepted' || data.eventComplete == false ">
+                      {{data.district}} , {{data.city}}
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="data.status === 'accepted' || data.eventComplete == false ">
+                      {{data.userMail}}
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="(data.Date | date:'dd/MM/yyyy') > (today | date:'dd/MM/yyyy' )  && data.status== 'accepted'" >
+                      <button (click)="changeStatus(data.bid,'cancelled')" type="button" style="border-width: 5px; padding: 4px;" class="btn btn-danger">Cancel</button>
+                    </div>
+                  </td>
+              </tr>
+          </thead>
+        </table>
+        <br><br><br><br><br><br>
+      </div>
+        </div>
+    </div>
+
+    <div  class="card" style="padding:30px;background-color: #eee;" id="onGoing">
+      <div class="col-lg-12" style="font-family:Roboto;background-color: #eee;padding-right: 30px">
+    <div class="text-center">
+      <h3 class="mb-sm-0 pt-3" style="padding-top: 15px;padding-bottom: 15px;">Completed Booking Information </h3>
+    </div>
+    <div class="d-flex "  style="padding-left: 30px;">
+      <table class="table table-striped ">
+        <thead class="" style="background-color: #eee;">
+            <tr>
+              <th> Date</th>
+              <th> Event Name</th>
+              <th> Event Type</th>
+              <th> Customer Name</th>
+              <th> Location</th>
+              <th> Customer Mail</th>
+              <th> Complete Status</th>
+              
+            </tr>
+            <tr *ngFor = "let data of dataSet">
+              <td>
+                <div *ngIf="data.status === 'completed' || data.status === 'rejected' || data.status === 'cancelled' || data.cancel == false ">
+                  {{data.Date}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="data.status === 'completed' || data.status === 'rejected' || data.status === 'cancelled' || data.cancel == false ">
+                  {{data.eName}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="data.status === 'completed' || data.status === 'rejected' || data.status === 'cancelled' || data.cancel == false ">
+                  {{data.eventType}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="data.status === 'completed' || data.status === 'rejected' || data.status === 'cancelled' || data.cancel == false ">
+                  {{data.Date}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="data.status === 'completed' || data.status === 'rejected' || data.status === 'cancelled' || data.cancel == false ">
+                  {{data.district}} , {{data.city}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="data.status === 'completed' || data.status === 'rejected' || data.status === 'cancelled' || data.cancel == false ">
+                  {{data.userMail}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="data.status === 'completed' || data.status === 'rejected' || data.status === 'cancelled' || data.cancel == false ">
+                  {{data.status}}
+                </div>
+              </td>
+            </tr>
+        </thead>
+      </table>
+      <br><br><br><br><br><br>
+    </div>
+      </div>
+    </div>
+  </div>
+</div> 

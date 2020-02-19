@@ -1,0 +1,76 @@
+@media (max-width: 1199.98px) {
+    .depth{
+        padding-left: 30px;
+    }
+}
+
+@media (min-width: 1199.98px) {
+    .depth{
+        padding-left:290px;
+    }
+}
+
+.bg-img {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh ;
+    width: 100vw;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .95;
+    background: #eee;
+    height: 100vh ;
+}
+
+
+.image{
+    padding: 0px;
+}
+.image img{
+    width: 100%;
+    position: relative;
+    height: 450px;
+}
+.setMargin{
+    margin: 0px;
+}
+
+.displayName{
+    padding-bottom:30px;
+    background-color:#FAFAFA;
+}
+
+.user-image{
+    position: absolute;
+    margin-top:-120px;
+  }
+
+.user-image img{
+    width:240px;
+    height:240px;
+    border: solid white;
+}
+.profile{
+    padding: 20px 0px 10px 15px;
+    background-color: #FFFFFF;  
+}
+.profile-header-section1 h1{
+    font-size: 25px;
+    margin: 0px;
+}
+.profile-header-section1 h5{
+    color: #0062cc;
+}

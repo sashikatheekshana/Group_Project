@@ -1,0 +1,61 @@
+<!-- <div class="row">
+    <input [(ngModel)]="value" (keyup)="onType($event)">
+    <button (click)="onSearchClick()">Search</button>
+</div> -->
+
+
+
+
+
+<!-- <div class="dropdown" >
+    <div class="form-inline ml-auto">
+        <input [(ngModel)]="value" (keyup)="onType($event)" class="form-control mr-sm-2" outline="true"  placeholder="Search"  >
+        <a mdbBtn floating="true" size="sm" color="primary" rounded="true"  (click)="onSearchClick()" >
+            <mdb-icon fas icon="search" ></mdb-icon>
+        </a>
+    </div>
+            <ul *ngIf="isVisible" class="dropdown drop"   >
+                <li *ngFor="let user of filtered" class="dropdown-item" >
+                    <a class="devider">
+                        <span class="user" (click)="onItemClick(user.displayName)">{{user.displayName}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>   -->
+    
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-top: 15px; margin: auto;">
+            <form class="form-inline mr-auto" style="padding-right: 20px;">
+                <div class="md-form my-0">
+                    <input [(ngModel)]="value" (keyup)="onType($event)" class="form-control" placeholder="Search here..." type="text"style="width:150px;" >
+                    <a mdbBtn floating="true" size="sm" color="primary" rounded="true"  (click)="onSearchClick()" >
+                        <mdb-icon fas icon="search" ></mdb-icon>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <!-- <div class="dropdown-menu dropdown drop" role="menu"> -->
+        <div class="card">
+            <ul *ngIf="isVisible" class="dropdown drop" >
+                <li *ngFor="let user of filtered" class="dropdown-item" >
+                    <a class="divider">
+                        <span class="user" (click)="onItemClick(user.displayName)">{{user.displayName}}</span>
+                    </a>
+                </li>
+            </ul> 
+        </div>   
+        <!-- </div> -->
+        
+
+
+
+
+
+
+
+
+    <!-- <ul *ngfor="let user of value " class="card">
+
+        <li>{{user.displayName}}</li>
+    </ul> -->

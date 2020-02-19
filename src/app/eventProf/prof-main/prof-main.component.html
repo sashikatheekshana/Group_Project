@@ -1,0 +1,162 @@
+<app-prof-sidebar></app-prof-sidebar>
+
+<div class="depth" style="padding-top:75px">
+    <div class="wrapper">
+        <div class="page-header page-header-small" filter-color="orange">
+            <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/Gallery/blog1.jpg') ;">
+            </div>
+            <div class="container">
+                <div class="content-center">
+                    <div class="photo-container" style="padding-top:120px;">
+                        <img src="{{this.Log.photoURL}}" alt="" class="rounded-circle" width="200px" height="200px">
+                    </div>
+                    <br>
+                    <h3 class="title">{{this.Log.displayName}}</h3>
+                    <h5 class="text-muted">{{this.Log.eType}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="padding:10px ">
+
+          <div class="col-lg-7">
+            <div class="container">
+               
+                  <div *ngFor="let item of list" class="card " style="width: 270px; height: 200px; margin:12px; ">
+                    <div class="row">
+                        <div >
+                          <button type="button" style="padding: 0px;" style="background-color: transparent;" class="waves-light" data-toggle="modal" data-target="#basicExample" (click)="previewImage(item,frame)" mdbWavesEffect>
+                              <img  src="{{item.data}}">
+                          </button>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card  peach-gradient-rgba">
+              <div class="container">
+                <div class="d-flex justify-content-center" style="padding-top: 25px;">
+                  <h3 class="title">User Bio</h3>
+                </div>
+                <p style="padding-left: 30px;padding-bottom: 30px;text-align: justify;padding-right: 30px;"> {{this.Log.description}} </p>
+              </div>
+            </div>
+ 
+            <div class="card peach-gradient-rgba">
+              <div class="d-flex justify-content-center" style="padding-top: 25px;">
+                <h3 class="title">Profile Information</h3>
+              </div>
+              <div style="padding-left: 30px;padding-bottom: 30px;text-align: justify;padding-right: 30px;">
+                  <div class="row">
+                      <div class="col-lg-4">
+                          <label><h5>User Name</h5></label>
+                      </div>
+                      <div class="col-8">
+                          <h5>:  {{this.Log.displayName}}</h5>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-4">
+                        <label><h5>Email Address</h5></label>
+                      </div>
+                      <div class="col-8">
+                          <h5>:  {{this.Log.email}}</h5>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-4">
+                        <label><h5>Gender</h5></label>
+                      </div>
+                      <div class="col-8">
+                          <h5>:  {{this.Log.gender}} </h5>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-4">
+                        <label><h5>Age</h5></label>
+                      </div>
+                      <div class="col-8">
+                          <h5>:  {{this.Log.age}} </h5>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-4">
+                        <label><h5>Contact</h5></label>
+                      </div>
+                      <div class="col-8">
+                          <h5>:  {{this.Log.contact}}</h5>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-4">
+                        <label><h5>District</h5></label>
+                      </div>
+                      <div class="col-8">
+                          <h5>:  {{this.Log.district}}</h5>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-4">
+                        <label><h5>City</h5></label>
+                      </div>
+                      <div class="col-8">
+                          <h5>:  {{this.Log.city}}</h5>
+                      </div>
+                  </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-header">
+              Upload your captures
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Select and upload your :</h5>
+              <input type="file" (change)="uploadImage($event)" accept=".png,.jpg" />
+              <!-- <button type="button" (click)="uploadImages($event)">Upload</button> -->
+              <br><br>
+              <br>
+              <div class="btn-group" role="group" *ngIf="uploadState | async; let state">
+                <button type="button" class="btn btn-primary" (click)="task.pause()"
+                  [disabled]="state === 'paused'">Pause</button>
+                <button type="button" class="btn btn-primary" (click)="task.cancel()"
+                  [disabled]="!(state === 'paused' || state ==='running')">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="task.resume()"
+                  [disabled]="state === 'running'">Resume</button>
+              </div>
+              <br><br>
+              <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+                File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- ------------------------------------------------------- image preview-------------------------------------------------------------------- -->
+  
+    
+    <div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+      <div class="modal-dialog modal-dialog-centered  modal-notify modal-info" role="document">
+          <div class="modal-content">
+      
+              <div class="modal-header">
+                  <p class="heading lead">Image Preview</p>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                      <span aria-hidden="true" class="white-text">×</span>
+                  </button>
+              </div>  
+
+              <div class="modal-body">
+                  {{image}}
+              </div>
+          </div>
+      </div>
+    </div>

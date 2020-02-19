@@ -1,0 +1,65 @@
+//-------------------- Align Conetent with Sidebar -------------------//
+
+@media (max-width: 1199.98px) {
+    .depth{
+        padding-left: 30px;
+        padding-right: 30px ;
+        padding-top : 100px ;
+        padding-bottom: 30px ;
+    }
+}
+
+@media (min-width: 1199.98px) {
+    .depth{
+        padding-left:300px;
+        padding-top : 100px ;
+        padding-right: 30px;
+        padding-bottom: 30px ;
+    }
+}
+
+
+//-------------------- Background Overlay -------------------//
+
+.bg-img {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh ;
+    width: 100vw;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .85;
+    background:white;
+    height: 100vh ;
+}
+
+
+//-----------------General---------------------//@at-root
+
+.detail-card{
+    background-color: #223;
+}
+
+.card-top{
+    padding-top:20px ;
+    padding-left: 20px;
+}
+
+.card-text{
+    font-size: 500%;
+    padding-top: 40px;
+    padding-bottom: 20px ;
+}

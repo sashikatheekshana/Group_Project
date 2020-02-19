@@ -1,0 +1,39 @@
+<p>filter-page-pro works!</p>
+
+<displayBar></displayBar>
+
+  <div class="container">
+   <section class="pb-3 text-center">
+   
+   
+    <div class="card">
+        <div class="card-body">
+          t<h4 class="h1 py-5 font-weight-bold" style="text-transform:capitalize; margin:auto;"  ><strong> {{type}} </strong> </h4>
+        </div>
+    </div>
+    
+      <div class="row">
+        <div class="tab " style="padding:2%; margin: auto;">
+            <div class="card h-100 " style="width:250px; margin: 10px; " *ngFor= "let user of filtered">   
+                   
+                <div class="avatar mx-auto  blue-grey  " style="padding-top: 10%; padding-bottom: 5%;">
+                  <img src="{{user.photoURL}}" class="rounded-circle"  style=" width: 200px; height: 200px;">
+                </div>
+                 
+                <div class="card-body" style="padding-top: 0.1px; width: 250px; height: 230px;">
+                  <h4 class="article__title font-weight-bold " >{{user.displayName}}</h4>                      
+                  <h5 class="article__title font-italic ">"{{user.eType}}" </h5>
+                  <hr>
+                  <div >
+                    <a   class="btn btn-outline-primary btn-rounded waves-effect"  (click)="onVisitClick(user.id)" mdbWavesEffect>Visit Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>  
+
+     
+      
+  </section>
+ 
+  </div>

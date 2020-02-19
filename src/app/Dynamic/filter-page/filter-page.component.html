@@ -1,0 +1,86 @@
+
+<p>filter-page works!</p>
+
+<displayBar></displayBar>
+
+  <div class="container">
+   <section class="pb-3 text-center">
+   
+    <div class="card">
+      <div class="card-body">        
+        T<h4 class="h1 py-5 font-weight-bold" style="text-transform:capitalize; margin:auto;"  ><strong> {{type}} </strong> </h4>       
+      </div>
+    </div>
+      
+    
+    
+    <!-- <div class="row" >
+ 
+      
+      <div class="col-lg-3 col-md-6 mb-4 " *ngFor= "let user of filtered" >    
+        <mdb-card class="testimonial-card" style="width:100%;" >
+ 
+          
+          <div class="card-up aqua-gradient">
+          </div>
+              
+          <div class="view overlay" >
+              <div class="avatar">
+                <img src="{{user.photoURL}}" class="img-fluid rounded-circle" style="width:50%;">
+              </div>
+          </div>
+          <mdb-card-body>
+            
+ 
+            <mdb-card-title>
+              <h4>{{user.displayName}}</h4>
+            </mdb-card-title>
+           
+            <hr>
+            
+              <p><mdb-icon fas icon="quote-left"></mdb-icon></p>
+              <p> {{user.des}}</p>
+
+              <div class="card-footer text-muted text-center mt-4">
+                <a mdbBtn color="unique" class="waves-light" (click)="onVisitClick(user.id)" mdbWavesEffect>Visit Profile</a>
+              </div>
+ 
+            </mdb-card-body>
+        </mdb-card>
+    
+      </div>
+      </div>  -->
+     
+
+
+      <div class="row">
+        <div class="tab " style="padding:2%; margin: auto;">
+            <div class="card h-100 " style="width:250px; margin: 10px; " *ngFor= "let user of filtered">   
+            
+                <div class="avatar mx-auto  blue-grey" src="../../assets/img/Gallery/Square/parties1.jpg" style="padding-top: 10%; padding-bottom: 5%;">
+                  <img src="{{user.photoURL}}" class="rounded-circle"  style=" width: 200px; height: 200px;">
+                </div>
+                 
+                <div class="card-body" style="padding-top: 0.1px; width: 250px; height: 230px;">
+                  <h4 class="article__title font-weight-bold " >{{user.displayName}}</h4>                      
+                  <h5 class="article__title font-italic ">"{{user.eType}}" </h5>
+                  <hr>
+                  <div >
+                    <a   class="btn btn-outline-primary btn-rounded waves-effect"  (click)="onVisitClick(user.id)" mdbWavesEffect>Visit Profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>  
+
+     
+      
+  </section>
+ 
+  </div>
+
+
+
+
+  
+  

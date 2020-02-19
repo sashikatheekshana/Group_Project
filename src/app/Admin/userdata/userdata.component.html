@@ -1,0 +1,193 @@
+<app-sidebar></app-sidebar>
+
+<div class="depth" style="padding-top:100px;"> 
+    <img src="../../../assets/img/Gallery/background1.jpg" class="bg-img" alt="placeholder">
+    <div class="overlay">
+    </div>
+
+    <!-- Tab Profile Information -->
+    <div class="col-sm-60"  style="padding-right:30px;">
+        <mdb-card class="mb-4 wow fadeIn" style="max-height:100px;border: solid #112;">
+            <mdb-card-body class="d-sm-flex justify-content-between"  style="background-color: #223;" >
+                <div class="col-lg-2 d-flex justify-content-center">
+                    <div style="padding-top: 8px;">
+                        <i class="fas fa-user-tie text-white fa-3x"></i>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <h3 class="mb-sm-0 pt-3 text-white"> Customer / Event Professional Information  </h3>
+                </div>
+            </mdb-card-body>
+        </mdb-card>
+
+        <div class="row">
+<!----------------------------------------- Retreived User Details on the website --------------------------------------------->
+
+            <div class="col-lg-12" style="padding: 30px;"> 
+                <div class="col-lg-12" style="padding: 30px;background-color: #223;" >           
+                    <table class="table table-striped">
+                        <thead class="text-white" style="background-color: #223;">
+                            <tr>
+                                <th></th>
+                                <th>First Name</th>
+                                <th> Last Name </th>
+                                <th> Display Name </th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th> Age  </th>
+                                <th> Gender </th>
+                                <th>User Type</th>
+                                <th>Event Type</th>
+                                <th>District </th>
+                                <th> City </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="white-text" style="background-color:#223;">
+                            <tr *ngFor= "let user of getUserList">
+                                <td>
+                                    <img src="{{user.photoURL}}" class="rounded" style="width: 40px;height: 40px;" alt ="dp">
+                                </td>
+                                <td> {{user.firstName}} </td>
+                                <td> {{user.lastName}}</td>
+                                <td> {{user.displayName}}</td>
+                                <td> {{user.email}} </td>
+                                <td> {{user.contact}} </td>
+                                <td> {{user.age}}</td>
+                                <td> {{user.gender}}</td>
+                                <td> {{user.userType}} </td>
+                                <td> {{user.eType}} </td>
+                                <td> {{user.district}} </td>
+                                <td> {{user.city}}</td>
+                                <td> 
+                                    <a class="btn-sm text-danger"  class="waves-light" data-toggle="modal" data-target="#basicExample"(click)="frame.show()" mdbWavesEffect (click)="onEdit(user)"> 
+                                        <i class="fas fa-user-edit btn-info rounded" style="padding: 10px;padding-left: 7px;padding-right: 7px;"></i>
+                                    </a> 
+                                </td>
+                                    <td> <a class="btn-sm text-danger"> 
+                                    <i class="fas fa-trash-alt btn-danger rounded " (click)="onDelete(user.id)" style="padding: 10px;"> </i>
+                                </a> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+<!-------------------------------------------| Modal |--------------------------------------------->
+            
+            <div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                <div class="modal-dialog modal-dialog-centered  modal-notify modal-danger" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" >
+                            <p class="heading lead white-text"> Edit User Details</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                                <span aria-hidden="true" class="white-text">×</span>
+                            </button>
+                        </div>  
+                        <div class="modal-body">
+                            <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+                                <input type="hidden" name="id" #id="ngModel" [(ngModel)]="users.userData.id">
+                                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                        <input disabled matInput placeholder="First Name" name="firstName" #firstName="ngModel" [(ngModel)]="users.userData.firstName" required > 
+                                    </mat-form-field>                 
+                                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                        <input disabled matInput placeholder="Last Name"  name="lastName" #lastName="ngModel" [(ngModel)]="users.userData.lastName" required > 
+                                    </mat-form-field>
+
+                                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                        <input disabled matInput placeholder="Email"  name="email" #email="ngModel" [(ngModel)]="users.userData.email" required > 
+                                    </mat-form-field>
+                                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                        <input matInput placeholder="Display Name"  name="displayName" #displayName="ngModel" [(ngModel)]="users.userData.displayName" required > 
+                                    </mat-form-field>
+                                    
+                                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                        <input matInput placeholder="Age"  name="age" #age="ngModel" [(ngModel)]="users.userData.age" > 
+                                    </mat-form-field>
+                                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                        <input matInput placeholder="city"  name="city" #city="ngModel" [(ngModel)]="users.userData.city"> 
+                                    </mat-form-field>
+
+                                    <div class="row">
+                                            <select class="mdb-select md-form col-lg-6 custom-select" style="background-color: transparent;" name="gender" #gender="ngModel" [(ngModel)]="users.userData.gender" > 
+                                                <option value="" disabled selected>Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        
+                                        <mat-form-field class="col-lg-6 col-md-6 col-sm-6">
+                                            <input matInput placeholder="Mobile"  name="contact" #contact="ngModel" [(ngModel)]="users.userData.contact"> 
+                                        </mat-form-field>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <select class="mdb-select md-form col-lg-12 custom-select" style="background-color: transparent;" name="userType" #userType="ngModel" [(ngModel)]="users.userData.userType" > 
+                                                <option value="" disabled selected>User Type</option>
+                                                <option value="User">User</option>
+                                                <option value="Professional">Professional</option>
+                                                <option value="Admin">Admin</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <select class="mdb-select md-form col-lg-12 custom-select" style="background-color: transparent;" name="eType" #eType="ngModel"  [(ngModel)]="users.userData.eType" > 
+                                                <option value="" disabled selected>Event Type</option>
+                                                <option value="Photographer">Photographer</option>
+                                                <option value="Videographer">Videographer</option>
+                                                <option value="Makeup Artist">Makeup Artist</option>
+                                                <option value="Music">DJ and Bands</option>
+                                                <option value="Catering">Catering</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <select class="mdb-select md-form col-lg-12 custom-select" style="background-color: transparent;" name="district" #district="ngModel" [(ngModel)]="users.userData.district" > 
+                                                <option value="" disabled selected> Select District </option>
+                                                <option value="Ampara"> Ampara </option>
+                                                <option value="Anuradhapura"> Anuradhapura </option>
+                                                <option value="Badulla">Badulla</option>
+                                                <option value="Batticaloa"> Batticaloa </option>
+                                                <option value="Colombo"> Colombo </option>
+                                                <option value="Galle">Galle</option>
+                                                <option value="Gampaha"> Gampaha</option>
+                                                <option value="Hambantota"> Hambantota </option>
+                                                <option value="Jaffna"> Jaffna </option>
+                                                <option value="Kalutara"> Kalutara</option>
+                                                <option value="Kandy">Kandy</option>
+                                                <option value="Kegalle">Kegalle</option>
+                                                <option value="Kilinochchi"> Kilinochchi </option>
+                                                <option value="Kurunegala"> Kurunegala</option>
+                                                <option value="Mannar"> Mannar</option>
+                                                <option value="Matale"> Matale </option>
+                                                <option value="Matara">Matara</option>
+                                                <option value="Monaragala">Monaragala</option>
+                                                <option value="Mulathiv"> Mulathiv </option>
+                                                <option value="NuwaraEliya">Nuwara Eliya</option>
+                                                <option value="Polonnaruwa"> Polonnaruwa </option>
+                                                <option value="Puttalam"> Puttalam</option>
+                                                <option value="Ratnapura"> Ratnapura</option>
+                                                <option value="Trincomalee"> Trincomalee</option>
+                                                <option value="Vavniya"> Vavniya </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                
+                                    <mat-form-field class="col-lg-12 col-md-12  col-sm-12">
+                                        <textarea rows="3" cols="60" matInput placeholder="Description" name="description" #description="ngModel" [(ngModel)]="users.userData.description" > </textarea>
+                                    </mat-form-field>             
+                                    <button type="submit" class="btn btn-lg btn-block btn-danger" > Edit User </button>
+                            
+                                    <div *ngIf="(firstName.invalid && firstName.touched) || (lastName.invalid && lastName.touched) || (email.invalid && email.touched) " class="text-center"> 
+                                        <h6 style="color: red;padding-top:10px">The highlighted fields are required* </h6> 
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
